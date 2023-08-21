@@ -1,0 +1,30 @@
+ALGORITHM Distinct_sum
+VAR
+//Declare variables and set length for arrays//
+    S1: ARRAY_OF INTEGER[4]; 
+    S2 : ARRAY_OF INTEGER[5];
+    D_array : ARRAY_OF INTEGER[5]
+    //Declare variables for increments and sum of distinct elements//
+    i,j: INTEGER
+    Sum: INTEGER := 0
+    
+BEGIN
+
+//Step1: Search and compare arrays for distinct elements in S1, add them to variable Sum and update index //
+    FOR i FROM 0 TO S1.length-1  STEP1 DO
+        IF (S1[i]<>S2[j]) THEN
+            Sum := Sum + S1[i];
+            i := i + 1;
+        END_IF
+            END_FOR
+
+//Step2: Search and compare arrays for distinct elements in S2, add them to variable Sum and update index //
+    FOR j FROM 0 TO S2.length-1 STEP 1 DO
+        IF (S2[j]<>S1[i])
+            Sum := Sum + S2[j];
+            j = j + 1;
+        END_IF
+            END_FOR
+//Step3:Display total sum of distinct elements
+            Write(Sum)
+END
